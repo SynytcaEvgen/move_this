@@ -5,7 +5,6 @@ function init() {
     const move_elment_2 = document.querySelector('.move_element.elem2');
     let x = 0, y = 0;
     function eventInit(event) {
-        event.preventDefault();
         event.addEventListener("touchstart", handelTouchStart, false);
         event.addEventListener("touchmove", handelTouchMove, false);
     }
