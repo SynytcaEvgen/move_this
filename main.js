@@ -15,12 +15,14 @@ function init() {
         stylElem.top = Math.abs(y) + 'px';
         stylElem.transform = 'translate(-50%, -50%)';
     };
+    
     function handelTouchStart(event) {
         event.preventDefault();
         let touchFirst = event.touches[0];
         x =+ touchFirst.clientX;
         y =+ touchFirst.clientY;
     };
+    
     function handelTouchMove(event) {
         event.preventDefault();
         if (!x || !y) {
@@ -34,6 +36,7 @@ function init() {
         yDiffe = (y - yM) - y;
         addStyle(this, xDiffe, yDiffe);
     };
+    
     eventInit(move_elment);
     eventInit(move_elment_1);
     eventInit(move_elment_2);
