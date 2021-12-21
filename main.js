@@ -5,6 +5,7 @@ function init() {
     const move_elment_2 = document.querySelector('.move_element.elem2');
     let x = 0, y = 0;
     function eventInit(event) {
+        event.preventDefault();
         event.addEventListener("touchstart", handelTouchStart, false);
         event.addEventListener("touchmove", handelTouchMove, false);
     }
@@ -16,11 +17,13 @@ function init() {
         stylElem.transform = 'translate(-50%, -50%)';
     };
     function handelTouchStart(event) {
+        event.preventDefault();
         let touchFirst = event.touches[0];
         x =+ touchFirst.clientX;
         y =+ touchFirst.clientY;
     };
     function handelTouchMove(event) {
+        event.preventDefault();
         if (!x || !y) {
             console.log('not a changes');
             return false;    
